@@ -84,7 +84,8 @@ A aplicação também possuí os arquivos de configuração necessários para se
   
   ### Componentes Reutilizáveis
 
-   - **NavBar**: Componente de navegação.
+   - **Header**: Componente de navegação.
+   - **Footer**: Componente com as informações sobre o trabalho.
    - **PostItem**: Componente para exibir um item de post.
    - **PostList**: Componente para listar posts.
    - **CreatePostForm**: Formulário para criar um novo post.

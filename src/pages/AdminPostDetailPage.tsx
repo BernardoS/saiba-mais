@@ -11,6 +11,7 @@ import { FormFooter, FormSeparator } from '../components/CreatePostForm';
 import { PrimaryButton, SecondaryButton } from '../components/GenericStyledComponents';
 import { faPencil, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { device } from '../layoutBreakpoints';
 
 export const ReadPostContainer = styled.div`
     display:flex;
@@ -24,6 +25,9 @@ export const ReadPostContent = styled.div`
     padding:0px 0px 64px 0px;
     align-self:center;
     width: 100%;
+    @media ${device.laptop} {
+      width:80%;
+    }
 `;
 
 export const PostBanner = styled.div`
