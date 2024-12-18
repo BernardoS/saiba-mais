@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { SecondaryButton } from './GenericStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
+import { device } from '../layoutBreakpoints';
 
 interface CreatePostFormProps {
   onCreate: (post: Omit<Post, '_id' | 'modifyDate' | 'createdAt' | 'updatedAt' | '__v'>) => void;
@@ -22,6 +23,11 @@ export const FormGroup = styled.div`
     margin-bottom:16px;
     &.small-input{
         width:45%;
+    }
+    @media ${device.mobile} {
+      &.small-input{
+        width:100%;
+      }
     }
 `;
 

@@ -1,5 +1,6 @@
 import SaibaMaisLogo from "../assets/logo-footer-menu.png";
 import styled from "styled-components";
+import { device } from "../layoutBreakpoints";
 
 export const FooterContainer = styled.div`
     background-color:#1E4071;
@@ -30,6 +31,13 @@ export const FooterInfoContainer = styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+
+    @media ${device.mobile} {
+      flex-direction:column;
+      align-items:center;
+      width:100%;
+      gap:24px;
+    }
 `;
 
 export const FooterInfoTitle = styled.h4`
@@ -54,11 +62,19 @@ export const FooterInfoItem = styled.li`
 export const FooterInfoRight = styled.div`
     text-align:right;
     width:33%;
+    @media ${device.mobile} {
+      text-align:center;
+      width:100%;
+    }
 `;
 
 export const FooterInfoLeft = styled.div`
     text-align:left;
     width:33%;
+    @media ${device.mobile} {
+      text-align:center;
+      width:100%;
+    }
 `;
 
 const Footer = () =>{

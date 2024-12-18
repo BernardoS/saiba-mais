@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 import { SecondaryButton } from '../components/GenericStyledComponents';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { device } from '../layoutBreakpoints';
 
 export const ManagePostsContainer = styled.div`
     display:flex;
@@ -23,6 +24,11 @@ export const ManagePostsContent = styled.div`
     padding:0px 0px 64px 0px;
     align-self:center;
     width:100%;
+    @media ${device.laptop} {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+    }
 `;
 
 export const ManagePostsTitle = styled.div`
@@ -38,6 +44,19 @@ export const ManagePostsTitle = styled.div`
     h1.main-title{
         font-size:48px;
     }
+
+    @media ${device.mobile} {
+      h1{
+          font-size:24px;
+          color:#1E4071;
+          font-weight:700;
+      }
+      h1.main-title{
+          font-size:24px;
+          font-weight:900;
+      }
+    }
+
 `;
 
 export const SearchAdminInputContainer = styled.div`

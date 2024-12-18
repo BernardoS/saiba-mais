@@ -6,6 +6,7 @@ import { auth } from '../services/firebase';
 import api from '../services/api';
 import Header from '../components/Header';
 import styled from "styled-components";
+import { device } from '../layoutBreakpoints';
 
 export const SavePostContainer = styled.div`
     display:flex;
@@ -19,6 +20,9 @@ export const SavePostContent = styled.div`
     padding:0px 0px 64px 0px;
     align-self:center;
     width:100%;
+    @media ${device.laptop} {
+      width:80%;
+    }
 `;
 
 export const SavePostTitle = styled.div`

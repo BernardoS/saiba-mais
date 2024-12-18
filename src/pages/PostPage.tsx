@@ -5,6 +5,7 @@ import styled from "styled-components";
 import PostBannerImage from "../assets/generic-post-image.png";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { device } from '../layoutBreakpoints';
 
 export const ReadPostContainer = styled.div`
     display:flex;
@@ -18,6 +19,11 @@ export const ReadPostContent = styled.div`
     padding:0px 0px 64px 0px;
     align-self:center;
     width: 100%;
+    
+    @media ${device.laptop} {
+      width:80%;
+    }
+
 `;
 
 export const PostBanner = styled.div`
