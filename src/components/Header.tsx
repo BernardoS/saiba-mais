@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { SecondaryButton } from "./GenericStyledComponents";
 import styled from "styled-components";
 import { useAuth } from "../contexts/AuthContext";
+import { device } from "../layoutBreakpoints";
 
 export const HeaderContainer = styled.div`
     display:flex;
@@ -17,6 +18,10 @@ export const HeaderContainer = styled.div`
     width:100%;
     height:96px;
     border-bottom:2px solid #FCC918;
+
+     @media ${device.mobile} {
+      height:124px;
+    }
 `;
 
 export const HeaderContent = styled.div`
@@ -24,6 +29,15 @@ export const HeaderContent = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${device.laptop} {
+      width: 80%;
+    }
+
+    @media ${device.mobile} {
+      flex-direction: column;
+      gap: 16px;
+    }
 `;
 
 export const LoginButon = styled.button`
@@ -53,6 +67,13 @@ export const HomeButton = styled.button`
     background-color:transparent;
     border:none;
     cursor:pointer;
+    img{
+        width:100%;
+    }
+
+    @media ${device.mobile} {
+      height:32px;
+    }
 `;
 
 export const HeaderButtonGroup = styled.div`
@@ -79,13 +100,13 @@ const Header = () =>{
         navigate("/admin");
     }
 
-    const { isLoggedIn, toggleLogin } = useAuth();
+    const { isLoggedIn, logOut } = useAuth();
 
 
-    const logOut = async() =>{
+    const handleLogOut = async() =>{
         const auth = getAuth();
         await signOut(auth);
-        toggleLogin();
+        logOut();
     }
 
     return( 
@@ -101,7 +122,7 @@ const Header = () =>{
                 </SecondaryButton>
                 {isLoggedIn
                     && (
-                    <SecondaryButton type="button" onClick={logOut}>
+                    <SecondaryButton type="button" onClick={handleLogOut}>
                         <FontAwesomeIcon icon={faSignOut}/>
                         Sair
                     </SecondaryButton>

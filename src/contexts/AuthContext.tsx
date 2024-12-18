@@ -24,11 +24,17 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   useEffect(()=>{
     const isLoggedStorage =  localStorage.getItem("isLoggedIn");
 
+    console.log(isLoggedStorage);
+
     if(isLoggedStorage == "true"){
       setIsLoggedIn(true);
-    }else if(isLoggedStorage == "false"){
+    } 
+    
+    if(isLoggedStorage == "false"){
       setIsLoggedIn(false)
     }
+
+
   },[])
   
 
@@ -38,8 +44,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }
 
   const logOut = () => {
+    
     setIsLoggedIn(false);
     localStorage.setItem("isLoggedIn","false");
+
+    console.log(localStorage.getItem("isLoggedIn"))
   }
 
   const toggleLogin = () => {

@@ -2,6 +2,7 @@ import React from 'react';
 import PostItem from './PostItem';
 import { Post } from '../types/Post';
 import styled from 'styled-components';
+import { device } from "../layoutBreakpoints";
 
 export const PostListContainer = styled.div`
     align-self:center;
@@ -11,6 +12,14 @@ export const PostListContainer = styled.div`
     column-gap:20px;
     row-gap:16px;
     flex-wrap:wrap;
+    @media ${device.laptop} {
+      width: 80%;
+      justify-content: space-around;
+    }
+    @media ${device.tablet} {
+      align-self:center;
+      width: 70%;
+    }
 `
 
 interface PostListProps {
